@@ -43,14 +43,21 @@ app.use(function (req, res, next) {
  */
 
 const authRouter = require("./routes/auth");
+const pictureRouter = require("./routes/picture");
+const usersRouter = require("./routes/users");
 
-app.use("/api/auth", authRouter);
+
+//app.use("/bloc", require("./routes/serge"))
+
+
+app.use("/api/auth", authRouter); // 
+app.use("/api/picture", pictureRouter);
 
 // 404 Middleware
 app.use((req, res, next) => {
   const error = new Error("Ressource not found.");
   error.status = 404;
-  next(err);
+  next(error);
 });
 
 // Error handler middleware
