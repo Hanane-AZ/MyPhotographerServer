@@ -10,7 +10,7 @@ cloudinary.config({
 
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary, // Cloudinary configuration
-  folder: "fezjfregerggeizpejfiozjfioz", // folder name to upload to on your cloudinary account.
+  folder: "myPhotos", // folder name to upload to on your cloudinary account.
   allowedFormats: ["jpg", "png"],
   filename: function (req, file, cb) {
     cb(null, file.originalname);
